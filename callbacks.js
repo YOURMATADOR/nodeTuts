@@ -4,25 +4,25 @@ const direcctorio = path.join(__dirname, 'temp')
 const contenido = __filename
 const nuevoArchivo = path.join(direcctorio, 'nuevoArchivo.js')
 
-const miCallback = (err, res) => {
-	if (err) {
-		console.log('Error al leer el archivo')
-	} else {
-		console.log('El contenido del archivo es \n', res)
-	}
-}
+// const miCallback = (err, res) => {
+// 	if (err) {
+// 		console.log('Error al leer el archivo')
+// 	} else {
+// 		console.log('El contenido del archivo es \n', res)
+// 	}
+// }
 
-fs.readFile('archivo.json', 'utf8', miCallback)
+// fs.readFile('archivo.json', 'utf8', miCallback)
 
-// * crear un directorio con un nuevo archivo con el mismo contenido de este archivo
+// // * crear un directorio con un nuevo archivo con el mismo contenido de este archivo
 
-// const tratarError = (err) => console.log(err)
+// // const tratarError = (err) => console.log(err)
 
-const hacerDirecctorio = (nombre) => fs.mkdirSync(nombre)
+// const hacerDirecctorio = (nombre) => fs.mkdirSync(nombre)
 
-const leerArchivo = (nombre) => fs.readFileSync(nombre, 'utf8')
+// const leerArchivo = (nombre) => fs.readFileSync(nombre, 'utf8')
 
-const escribirArchivo = (nombre, txt) => fs.writeFileSync(nombre, txt)
+// const escribirArchivo = (nombre, txt) => fs.writeFileSync(nombre, txt)
 
 // const crearNuevoArchivo = (carpeta,texto,nombre) =>
 // hacerDirecctorio(carpeta)
@@ -60,3 +60,15 @@ const revizarPorError = (cb) => {
 }
 
 const tratarError = (err) => console.log(err);
+const exito = () => console.log("Exito al crear el archivo");
+
+const escribirArchivo =(contenido) => 
+fs.writeFile(nuevoArchivo,contenido,revizarPorError(exito))
+
+const leerArchivo = (nombre) =>
+fs.readFile(contenido,revizarPorError(escribirArchivo))
+
+const crearCarpeta = (nombre) => 
+fs.mkdir(nombre,revizarPorError(leerArchivo))
+
+crearCarpeta(direcctorio);
