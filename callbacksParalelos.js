@@ -20,7 +20,7 @@ const tiemposRandom = (args, cb) => {
 		
 
 	const ejecFuncion = () => {
-		var orden = subida
+		var orden = subida // la variable se guarda localmente con lo que no afecta si se llama otra funcion antes no modificara el valor de esta
 		subida++
 		return (err, resul) => {
 			subida--
