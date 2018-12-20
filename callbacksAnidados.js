@@ -14,15 +14,24 @@ const dispararError = (fn) => {
 	}
 }
 const anidado = (args, cb) => {
-	call1(args, dispararError((err, res1) => {
-        call2(args,dispararError((err,res2) =>{
-            call3(args,dispararError((err,res3) =>{
-                return err ? cb(err) : cb(null,[res1,res2,res3]);
-            }))
-        }))
-    }))
+	call1(
+		args,
+		dispararError((err, res1) => {
+			call2(
+				args,
+				dispararError((err, res2) => {
+					call3(
+						args,
+						dispararError((err, res3) => {
+							return err ? cb(err) : cb(null, [res1, res2, res3])
+						})
+					)
+				})
+			)
+		})
+	)
 }
 
 module.exports = {
-    anidado
+	anidado
 }
