@@ -13,7 +13,7 @@ function miPrimerNombre() {
 }
 console.log(nombres.nombre)
 miPrimerNombre.call(nombres)
-
+const colleccion = [
 	(cb) => fs.mkdir(carpeta, cb),
 	(cb) =>
 		fs.readFile(__filename, (err, con) => {

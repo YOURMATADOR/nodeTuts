@@ -8,6 +8,7 @@ const enviar = (colleccion, itinerar, cb) => {
 			cb(mens, err)
 		}
 	}
+	
 	const indexar = (index) => {
 		pendiente--
 		return (mensaje, err) => {
