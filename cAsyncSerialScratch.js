@@ -21,7 +21,7 @@ const colleccion = [
 		})
 	},
 
-	fs.writeFile.bind(fs, archivo)
+	(cb)=> fs.writeFile(archivo,l,cb)
 ]
 const done = (err) => (err ? console.log(err) : console.log('Todo listo C:'))
 async.serial(colleccion, done)

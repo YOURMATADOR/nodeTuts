@@ -24,7 +24,7 @@ const serial = (operaciones, done) => {
 		} else {
 			console.log(operaciones[contador])
 			if (parametro) {
-				operaciones[contador](parametro,prueba)
+				operaciones[contador](prueba)
 			} else {
 				operaciones[contador](prueba)
 			}
